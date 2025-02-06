@@ -7,7 +7,7 @@ defmodule Debut.Repo.Migrations.CreateGists do
       add :name, :string
       add :description, :text
       add :markup_text, :text
-      add :user_id, references(:users, on_delete: :nothing, type: :binary_id)
+      add :user_id, references(:users, on_delete: :delete_all, type: :binary_id)
 
       timestamps(type: :utc_datetime)
     end
