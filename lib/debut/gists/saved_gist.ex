@@ -6,8 +6,8 @@ defmodule Debut.Gists.SavedGist do
   @foreign_key_type :binary_id
   schema "saved_gists" do
 
-    field :user_id, :binary_id
-    field :gist_id, :binary_id
+    belongs_to :user, Debut.Accounts.User
+    belongs_to :gist, Debut.Gists.Gist
 
     timestamps(type: :utc_datetime)
   end
@@ -15,7 +15,7 @@ defmodule Debut.Gists.SavedGist do
   @doc false
   def changeset(saved_gist, attrs) do
     saved_gist
-    |> cast(attrs, [])
-    |> validate_required([])
+    |> cast(attrs, [:user_id, :gist_id])
+    |> validate_required([:user_id, :gist_id])
   end
 end
