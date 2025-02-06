@@ -35,3 +35,6 @@ debut-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Ignore docker volumes
+/archive/
+

@@ -2,10 +2,10 @@ import Config
 
 # Configure your database
 config :debut, Debut.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "root",
+  password: "secret",
   hostname: "localhost",
-  database: "debut_dev",
+  database: "gist_db",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
