@@ -27,6 +27,6 @@ This project is a simplified clone of GitHub Gist, built using Elixir, Phoenix, 
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/](https://github.com/)Fredenga/gist-clone.git
-   cd gist-clone
+   git clone https://github.com/Fredenga/liveview_debut.git
+   cd liveview_debut
    ```
