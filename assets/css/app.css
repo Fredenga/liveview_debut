@@ -33,3 +33,10 @@
   border-color: white transparent transparent transparent;
   border-style: solid;
 }
+.menu-item {
+  @apply block px-4 py-2 text-sm text-white font-brand font-regular;
+}
+
+.menu-item:hover {
+  @apply hover:text-emDark-light;
+}
