@@ -35,19 +35,43 @@
       tabindex="-1"
       id="user-menu-item-0"
       > Signed In as <%= @current_user.email  %> </.link> 
+      <.link 
+      href="#"
+      class="menu-item"
+      tabindex="-1"
+      id="user-menu-item-1"
+      method="get"
+      > Your Gists </.link> 
+      <.link 
+      href="#"
+      class="menu-item border-b border-white border-opacity-50"
+      tabindex="-1"
+      id="user-menu-item-2"
+      method="get"
+      > Saved Gists </.link> 
+      <.link 
+      href={~p"/users/log_out"}
+      class="menu-item border-b border-white border-opacity-50"
+      tabindex="-1"
+      id="user-menu-item-3"
+      method="delete"
+      > Sign Out </.link> 
+      
       <% else %>
       <.link 
       href={~p"/users/log_in"}
       class="menu-item border-b border-white border-opacity-50"
       tabindex="-1"
-      id="user-menu-item-0"
+      id="user-menu-item-4"
+      method="get"
       > Sign In
     </.link> 
     <.link 
       href={~p"/users/register"}
       class="menu-item"
       tabindex="-1"
-      id="user-menu-item-0"
+      id="user-menu-item-5"
+      method="get"
       > Register
     </.link> 
       <% end %>
