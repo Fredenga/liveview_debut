@@ -1,0 +1,2 @@
+server:
+	mix phx.server
