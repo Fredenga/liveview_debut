@@ -51,6 +51,14 @@
   @apply hover:text-emDark-light;
 }
 
+form input[type="text"] {
+  @apply bg-emDark-dark font-brand font-regular text-white text-sm border border-white;
+}
+
+form input[type="text"]:focus {
+  @apply focus:outline-none focus:border-emLavender focus:ring-0;
+}
+
 .dropdown-menu-arrow::before {
   content: "";
   position: absolute;
