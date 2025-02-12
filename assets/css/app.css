@@ -59,6 +59,19 @@ form input[type="text"]:focus {
   @apply focus:outline-none focus:border-emLavender focus:ring-0;
 }
 
+.textarea {
+  @apply bg-emDark-dark font-brand font-regular text-white text-xs border-white h-[300px] resize-none;
+  border-top: none;
+}
+
+.create-button {
+  @apply bg-emPurple border border-white font-brand font-regular text-black text-base;
+}
+
+.create-button:hover {
+  @apply hover:bg-emPurple-dark text-emDark-light border-emDark-light;
+}
+
 .dropdown-menu-arrow::before {
   content: "";
   position: absolute;

@@ -13,11 +13,14 @@
         </div>          
       </div>
       <.input field={@form[:markup_text]} 
-      type="textarea" class="w-full rounded-b-md" 
+      type="textarea" class="w-full rounded-b-md textarea" 
       placeholder="Insert code..." 
       spellcheck="false"
       autocomplete="off"
       />
+    </div>
+    <div class="flex justify-end">
+      <.button class="create-button">Create Gist</.button>
     </div>
   </div>
   </.form>
