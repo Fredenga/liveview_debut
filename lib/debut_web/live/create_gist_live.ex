@@ -11,5 +11,19 @@ defmodule DebutWeb.CreateGistLive do
     {:ok, socket}
   end
 
+  def handle_event("create", %{"gist" => params}, socket) do
+    case Gists.create_gist(socket.assigns.current_user, params) do
+      {:ok, _gist} ->
+        # reset our form with empty Gist struct
+        changeset = Gists.change_gist(%Gist{})
+        {:noreply, assign(socket, :form, to_form(changeset))}
+
+      {:error, %Ecto.Changeset{} = changeset} ->
+        # show errors but keep form intact
+        {:noreply, assign(socket, :form, to_form(changeset))}
+
+    end
+  end
+
 
 end
