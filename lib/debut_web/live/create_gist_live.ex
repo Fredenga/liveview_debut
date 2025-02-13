@@ -20,6 +20,7 @@ defmodule DebutWeb.CreateGistLive do
         # reset our form with empty Gist struct
         changeset = Gists.change_gist(%Gist{})
         {:noreply, assign(socket, :form, to_form(changeset))}
+        {:noreply, push_navigate(socket, to: "/gist")}
 
       {:error, %Ecto.Changeset{} = changeset} ->
         # show errors but keep form intact
