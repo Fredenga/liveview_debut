@@ -28,7 +28,7 @@
         </textarea>
         <textarea 
         id="markup_text" 
-        name="@form[markup_text]" 
+        field="@form[markup_text]" 
         phx-hook="UpdateLineNumbers"
         placeholder="Insert code..." 
         phx-debounce="blur"
@@ -44,10 +44,7 @@
       
   <%= if @form.errors[:markup_text] do %>
       <p class="error"><%= @form.errors[:markup_text] %></p>
-  <% end %>
-       
-        
-     
+  <% end %>     
     </div>
     <div class="flex justify-end">
       <.button 
@@ -59,3 +56,4 @@
     </div>
   </div>
   </.form>
+
