@@ -30,13 +30,19 @@ let Hooks = {};
 
 Hooks.UpdateLineNumbers = {
   mounted() {
+    const lineNumberText = document.getElementById("line-numbers");
+
     this.el.addEventListener("input", () => {
       this.UpdateLineNumbers();
     });
 
     this.el.addEventListener("scroll", () => {
-      const lineNumberText = document.getElementById("line-numbers");
       lineNumberText.scrollTop = this.el.scrollTop;
+    });
+
+    this.handleEvent("clear-textareas", () => {
+      this.el.value = "";
+      lineNumberText.value = "1\n";
     });
 
     this.UpdateLineNumbers();
