@@ -22,19 +22,26 @@
           />
         </div>          
       </div>
+      <div class="flex w-full">
+        <textarea name="" readonly id="line-numbers">
+          <%= "1\n"  %>
+        </textarea>
+        <textarea 
+        id="markup_text" 
+        name="@form[markup_text]" 
+        phx-hook="UpdateLineNumbers"
+        placeholder="Insert code..." 
+        phx-debounce="blur"
+        rows="5" 
+        class="bg-emDark-dark font-brand font-regular 
+              text-white text-xs border-white w-full 
+              h-[300px] resize-none border-t-0 border-l-0 focus:outline-none
+              focus:ring-0 focus:border-white rounded-br-md"
+       >
+        <%= @form.data.markup_text %>
+        </textarea>
+      </div>
       
-      <textarea 
-      id="markup_text" 
-      name="@form[markup_text]" 
-      placeholder="Insert code..." 
-      phx-debounce="blur"
-      rows="5" 
-      class="bg-emDark-dark font-brand font-regular 
-            text-white text-xs border-white w-full 
-            h-[300px] resize-none border-t-0 focus:outline-none"
-     >
-      <%= @form.data.markup_text %>
-      </textarea>
   <%= if @form.errors[:markup_text] do %>
       <p class="error"><%= @form.errors[:markup_text] %></p>
   <% end %>
