@@ -33,6 +33,12 @@ Hooks.UpdateLineNumbers = {
     this.el.addEventListener("input", () => {
       this.UpdateLineNumbers();
     });
+
+    this.el.addEventListener("scroll", () => {
+      const lineNumberText = document.getElementById("line-numbers");
+      lineNumberText.scrollTop = this.el.scrollTop;
+    });
+
     this.UpdateLineNumbers();
   },
 
