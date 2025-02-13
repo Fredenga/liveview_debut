@@ -22,17 +22,33 @@
           />
         </div>          
       </div>
-      <.input 
-      field={@form[:markup_text]} 
-      type="textarea" class="w-full rounded-b-md textarea" 
+      
+      <textarea 
+      id="markup_text" 
+      name="@form[markup_text]" 
       placeholder="Insert code..." 
-      spellcheck="false"
       phx-debounce="blur"
-      autocomplete="off"
-      />
+      rows="5" 
+      class="bg-emDark-dark font-brand font-regular 
+            text-white text-xs border-white w-full 
+            h-[300px] resize-none border-t-0 focus:outline-none"
+     >
+      <%= @form.data.markup_text %>
+      </textarea>
+  <%= if @form.errors[:markup_text] do %>
+      <p class="error"><%= @form.errors[:markup_text] %></p>
+  <% end %>
+       
+        
+     
     </div>
     <div class="flex justify-end">
-      <.button class="create-button">Create Gist</.button>
+      <.button 
+      class="create-button"
+      phx-disable-with="Creating..."
+      >
+      Create Gist
+    </.button>
     </div>
   </div>
   </.form>
