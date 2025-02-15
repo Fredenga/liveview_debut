@@ -1,5 +1,4 @@
 defmodule DebutWeb.Router do
-  alias DebutWeb.GistLive
   use DebutWeb, :router
 
   import DebutWeb.UserAuth

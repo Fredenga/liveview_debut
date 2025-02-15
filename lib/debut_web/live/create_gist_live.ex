@@ -19,8 +19,9 @@ defmodule DebutWeb.CreateGistLive do
         socket = push_event(socket, "clear-textareas", %{})
         # reset our form with empty Gist struct
         changeset = Gists.change_gist(%Gist{})
-        {:noreply, assign(socket, :form, to_form(changeset))}
-        {:noreply, push_navigate(socket, to: "/gist")}
+        socket = assign(socket, :form, to_form(changeset))
+
+        {:noreply, push_navigate(socket, to: "/gist?#{[id: params.id]}")}
 
       {:error, %Ecto.Changeset{} = changeset} ->
         # show errors but keep form intact
